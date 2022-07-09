@@ -21,7 +21,7 @@ public class lesson_14 {
         desiredCapabilities.setCapability("appActivity", "com.wdiodemoapp.MainActivity");
 
         try {//Init appium session
-            URL appiumServer = new URL("http://localhost:4725/wd/hub");
+            URL appiumServer = new URL("http://localhost:4723/wd/hub");
             appiumDriver = new AndroidDriver<MobileElement>(appiumServer, desiredCapabilities);
 
             // DEBUG PURPOSE ONLY
