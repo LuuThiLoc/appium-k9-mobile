@@ -36,7 +36,6 @@ public class LoginFormTest {
             MobileElement loginDialogTitleElem = appiumDriver.findElement(MobileBy.id("android:id/alertTitle"));
             System.out.println(loginDialogTitleElem.getText());
 
-
             // DEBUG PURPOSE ONLY
             Thread.sleep(3000);
 
