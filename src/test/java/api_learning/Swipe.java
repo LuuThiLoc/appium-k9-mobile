@@ -15,63 +15,107 @@ import platform.Platform;
 import java.time.Duration;
 
 public class Swipe {
+    static AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
 
     public static void main(String[] args) {
+        // Forms Screen:
+//        swipeUpVertically(25, 1);
+//        swipeUpVerticallyWithSteps(10, 5);
 
-        swipeVertically();
+        // Swipe Screen:
+//        SwipeRightToLeft();
+        SwipeLeftToRight();
 
-        swipeVertically(10, 5);
-
+        appiumDriver.quit();
     }
 
     // Swipe up from 90 -> 10
-    public static void swipeVertically() {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+    public static void swipeUpVertically(int step, int times) {
+
+        PointOption startPoint = new PointOption<>();
+        PointOption endPoint = new PointOption<>();
+
+        TouchAction touchAction = touchActionInFormsScreen(startPoint, endPoint, step, times);
+    }
+
+    // Swipe up | step 10%, 5 times
+    public static void swipeUpVerticallyWithSteps(int step, int times) {
+        PointOption startPoint = new PointOption<>();
+        PointOption endPoint = new PointOption<>();
+
+        touchActionInFormsScreen(startPoint, endPoint, step, times);
+    }
+
+    public static void SwipeRightToLeft() {
+
+        PointOption startPoint = new PointOption<>();
+        PointOption endPoint = new PointOption<>();
+
+        touchActionInSwipeScreen(startPoint, endPoint);
+    }
+
+    public static void SwipeLeftToRight() {
+
+        PointOption startPoint = new PointOption<>();
+        PointOption endPoint = new PointOption<>();
+
+        touchActionInSwipeScreen(startPoint, endPoint)
+                .press(endPoint)
+                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(500)))
+                .moveTo(startPoint)
+                .release()
+                .perform();
+    }
+
+    public static TouchAction touchActionInSwipeScreen(PointOption startPoint, PointOption endPoint) {
 
         try {
-            // Navigate to Forms Screen
-            MobileElement navFormsScreenBtn = appiumDriver.findElement(MobileBy.AccessibilityId("Forms"));
-            navFormsScreenBtn.click();
+            // Navigate to Swipe Screen
+            MobileElement navSwipeScreenBtn = appiumDriver.findElement(MobileBy.AccessibilityId("Swipe"));
+            navSwipeScreenBtn.click();
 
             // Wait until user is on Form screen
             WebDriverWait wait = new WebDriverWait(appiumDriver, 10L);
             wait.until(ExpectedConditions
-                    .visibilityOfElementLocated(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"Form components\")")));
+                    .visibilityOfElementLocated(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"Swipe horizontal\")")));
 
             // Get Mobile window size
             Dimension windowSize = appiumDriver.manage().window().getSize();
 
             int screenHeight = windowSize.getHeight();
             int screenWidth = windowSize.getWidth();
+
             // Calculate touch points
             int xStartPoint = 50 * screenWidth / 100;
-            int xEndPoint = 50 * screenWidth / 100;
+            int xEndPoint = 10 * screenWidth / 100;
 
-            int yStartPoint = 90 * screenHeight / 100;
-            int yEndPoint = 10 * screenHeight / 100;
+            int yStartPoint = 70 * screenHeight / 100;
+            int yEndPoint = 70 * screenHeight / 100;
 
             // Convert coordinates -> PointOption
-            PointOption startPoint = new PointOption<>().withCoordinates(xStartPoint, yStartPoint);
-            PointOption endPoint = new PointOption<>().withCoordinates(xEndPoint, yEndPoint);
+            startPoint = new PointOption<>().withCoordinates(xStartPoint, yStartPoint);
+            endPoint = new PointOption<>().withCoordinates(xEndPoint, yEndPoint);
 
-            TouchAction touchAction = new TouchAction(appiumDriver);
-            touchAction
-                    .press(startPoint)
-                    .waitAction(new WaitOptions().withDuration(Duration.ofMillis(500)))
-                    .moveTo(endPoint)
-                    .release()
-                    .perform();
+            for (int i = 0; i < 3; i++) {
+                TouchAction touchAction = new TouchAction(appiumDriver);
+                touchAction
+                        .press(startPoint)
+                        .waitAction(new WaitOptions().withDuration(Duration.ofMillis(500)))
+                        .moveTo(endPoint)
+                        .release()
+                        .perform();
 
-            Thread.sleep(2000);
+                Thread.sleep(1000);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        appiumDriver.quit();
+
+        return new TouchAction<>(appiumDriver);
     }
 
-    // Swipe up | step 10%, 5 times
-    public static void swipeVertically(int step, int times) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+    public static TouchAction touchActionInFormsScreen(PointOption startPoint, PointOption endPoint, int step, int times) {
 
         try {
             // Navigate to Forms Screen
@@ -98,10 +142,9 @@ public class Swipe {
             int yEndPoint = yStartPoint - nextStep;
 
             // Convert coordinates -> PointOption
-            PointOption startPoint = new PointOption<>().withCoordinates(xStartPoint, yStartPoint);
-            PointOption endPoint = new PointOption<>().withCoordinates(xEndPoint, yEndPoint);
+            startPoint = new PointOption<>().withCoordinates(xStartPoint, yStartPoint);
+            endPoint = new PointOption<>().withCoordinates(xEndPoint, yEndPoint);
 
-            // Move 5 times
             for (int i = 0; i < times; i++) {
                 TouchAction touchAction = new TouchAction(appiumDriver);
                 touchAction
@@ -110,13 +153,15 @@ public class Swipe {
                         .moveTo(endPoint)
                         .release()
                         .perform();
+
+                Thread.sleep(1000);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        appiumDriver.quit();
+        return new TouchAction<>(appiumDriver);
     }
 }
 
