@@ -27,13 +27,13 @@ public class TakingScreenShot {
 
             // An area
             MobileElement loginFormElem = appiumDriver.findElement(MobileBy.AccessibilityId("Login-screen"));
-            base64ScreenshotData = appiumDriver.getScreenshotAs(OutputType.FILE);
+            base64ScreenshotData = loginFormElem.getScreenshotAs(OutputType.FILE);
             fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("LoginForm.png");
             FileUtil.copyFile(base64ScreenshotData, new File(fileLocation));
 
             // An element
             MobileElement loginBtnElem = appiumDriver.findElement(MobileBy.AccessibilityId("button-LOGIN"));
-            base64ScreenshotData = appiumDriver.getScreenshotAs(OutputType.FILE);
+            base64ScreenshotData = loginBtnElem.getScreenshotAs(OutputType.FILE);
             fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("LoginBtn.png");
             FileUtil.copyFile(base64ScreenshotData, new File(fileLocation));
 
