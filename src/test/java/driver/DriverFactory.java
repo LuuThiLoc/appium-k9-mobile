@@ -22,6 +22,9 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         desiredCapabilities.setCapability(UDID, "c8adce237d27");
         desiredCapabilities.setCapability(APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
+//        desiredCapabilities.setCapability(TIME_OUT, 240000);
+//        desiredCapabilities.setCapability(NEW_COMMAND_TIMEOUT, 60);
+
         URL appiumServer = null;
 
         try {
@@ -44,7 +47,7 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         }
 
         // implicit wait | Interval time = 500ms
-        appiumDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        appiumDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 
         return appiumDriver;
     }
