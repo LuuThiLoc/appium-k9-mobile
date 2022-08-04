@@ -6,12 +6,11 @@ import io.appium.java_client.MobileElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import platform.Platform;
+import test_data.DataObjectBuilder;
+import test_data.models.LoginCreds;
 import test_flows.authentication.LoginFlow;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class LoginTestWithDataProvider {
+public class LoginTestWithDataBuilder {
 
     @Test(dataProvider = "loginCredData")
     public void testLogin(LoginCreds loginCred) {
@@ -31,29 +30,10 @@ public class LoginTestWithDataProvider {
         appiumDriver.quit();
     }
 
-    public static class LoginCreds {
-        private String email;
-        private String password;
-
-        public String getEmail() {
-            return email;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public LoginCreds(String email, String password) {
-            this.email = email;
-            this.password = password;
-        }
-    }
 
     @DataProvider
-    public LoginCreds[] loginCredData(){ //LoginCreds[] : mảng 1 chiều
-        LoginCreds loginCred01 = new LoginCreds("teo@s", "1234567");
-        LoginCreds loginCred02 = new LoginCreds("teo@sth.com","1234567");
-        LoginCreds loginCred03 = new LoginCreds("teo@sth.com","12345678");
-        return new LoginCreds[]{loginCred01, loginCred02, loginCred03};
+    public LoginCreds[] loginCredData(){
+        String filePath = "\\src\\test\\java\\test_data\\authen\\LoginCreds.json";
+        return DataObjectBuilder.buildDataObject(filePath, LoginCreds[].class);
     }
 }

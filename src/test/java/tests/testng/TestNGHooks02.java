@@ -1,19 +1,7 @@
 package tests.testng;
 
 import org.testng.annotations.*;
-
-public class TestNGHooks01 {
-
-    // TestNG HOOK
-    @BeforeSuite
-    public void beforeSuite(){
-        System.out.println("\t--->" + this.getClass().getSimpleName() + "|Before Suite");
-    }
-
-    @BeforeTest
-    public void beforeTest(){
-        System.out.println("\t\t--->" + this.getClass().getSimpleName() + "|Before Test");
-    }
+public class TestNGHooks02 extends BaseTestNG {
 
     @BeforeClass
     public void beforeClass(){

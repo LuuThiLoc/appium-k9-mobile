@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import platform.Platform;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
 public class DragAndDrop {
     static AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
@@ -23,7 +25,6 @@ public class DragAndDrop {
 //        dragAndDrop2();
 
         // Verify drag successfully
-
 
     }
 
@@ -36,19 +37,31 @@ public class DragAndDrop {
         // row 1: , 25 , 50, , 75, 87
         // row 2: 25, , ,
 
-        touchActionInDragScreen(startPoint, endPoint, 62, 25, 93, 37);
-//        touchActionInDragScreen(startPoint, endPoint, 13, 37, 81, 25);
-//        touchActionInDragScreen(startPoint, endPoint, 75, 37, 93, 25);
-//        touchActionInDragScreen(startPoint, endPoint, 62, 50, 81, 50);
-//        touchActionInDragScreen(startPoint, endPoint, 37, 50, 93, 50);
-//        touchActionInDragScreen(startPoint, endPoint, 87, 50, 81, 50);
-//        touchActionInDragScreen(startPoint, endPoint, 50, 62, 81, 75);
-//        touchActionInDragScreen(startPoint, endPoint, 25, 62, 93, 75);
-//        touchActionInDragScreen(startPoint, endPoint, 37, 62, 81, 75);
+        int xStart = 0;
+        int xEnd = 0;
+        int yStart = 0;
+        int yEnd = 0;
 
-        //        [HTTP] {"actions":[{"action":"press","options":{"x":446,"y":1249}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":266,"y":336}},{"action":"release","options":{}}]}
+        int[] pointArr01 = {62, 25, 93, 38};
+        int[] pointArr02 = {13, 37, 81, 25};
+        int[] pointArr03 = {75, 37, 93, 25};
+        int[] pointArr04 = {62, 25, 81, 37};
+        int[] pointArr05 = {37, 50, 93, 50};
+        int[] pointArr06 = {87, 50, 81, 50};
+        int[] pointArr07 = {50, 62, 81, 75};
+        int[] pointArr08 = {25, 62, 93, 75};
+        int[] pointArr09 = {37, 62, 81, 75};
 
-//        [debug] [W3C (c7e62305)] Calling AppiumDriver.performTouch() with args: [[{"action":"press","options":{"x":446,"y":1249}},{"action":"wait","options":{"ms":1000}},{"action":"moveTo","options":{"x":266,"y":336}},{"action":"release","options":{}}],"c7e62305-ebb3-4a5a-839c-3ce150c8dff7"]
+        List<int[]> pointList = Arrays.asList(pointArr01, pointArr02, pointArr03, pointArr04, pointArr05, pointArr06, pointArr07,pointArr08, pointArr09);
+
+        for (int[] points : pointList) {
+            xStart= points[0];
+            xEnd= points[1];
+            yStart= points[2];
+            yEnd= points[3];
+
+            touchActionInDragScreen(startPoint, endPoint, xStart, xEnd, yStart, yEnd);
+        }
     }
 
     public static void dragAndDrop2(){
@@ -103,12 +116,12 @@ public class DragAndDrop {
                 TouchAction touchAction = new TouchAction(appiumDriver);
                 touchAction
                         .press(startPoint)
-                        .waitAction(new WaitOptions().withDuration(Duration.ofMillis(2000)))
+                        .waitAction(new WaitOptions().withDuration(Duration.ofMillis(15000)))
                         .moveTo(endPoint)
                         .release()
                         .perform();
 
-                Thread.sleep(2000);
+                Thread.sleep(5000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -149,5 +162,4 @@ public class DragAndDrop {
 
         return new TouchAction<>(appiumDriver);
     }
-
 }
