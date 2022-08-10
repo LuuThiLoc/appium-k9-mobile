@@ -2,6 +2,7 @@ package test_flows.authentication;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.qameta.allure.Step;
 import models.components.login.LoginFormComponent;
 import models.pages.LoginScreen;
 import org.apache.commons.validator.routines.EmailValidator;
@@ -54,18 +55,21 @@ public class LoginFlow extends BaseFlow {
     }
 
     // TODO-HOMEWORK
+    @Step("Verify Correct Login Creds")
     private void verifyCorrectLoginCreds(LoginFormComponent loginFormComp) {
         String actualLoggedInMsgStr = loginFormComp.getActualLoggedInMsgStr();
         String expectedLoggedInMsgStr = "You are logged in!";
         Assert.assertEquals(actualLoggedInMsgStr, expectedLoggedInMsgStr,"[ERR] Actual message and expected message are different!");
     }
 
+    @Step("Verify login with incorrect email")
     private void verifyIncorrectEmail(LoginFormComponent loginFormComp) {
         String actualInvalidEmailStr = loginFormComp.getInvalidEmailStr();
         String expectedInvalidEmailStr = "Please enter a valid email address";
         Assert.assertEquals(actualInvalidEmailStr, expectedInvalidEmailStr, "[ERR]Please enter a valid email address");
     }
 
+    @Step("Verify login with incorrect password")
     private void verifyIncorrectPassword(LoginFormComponent loginFormComp) {
         String actualInvalidPasswordStr = loginFormComp.getInvalidPasswordStr();
         String expectedInvalidPasswordStr = "Please enter at least 8 characters";

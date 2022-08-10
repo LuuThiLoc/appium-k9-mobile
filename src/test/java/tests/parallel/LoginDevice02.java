@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import io.qameta.allure.TmsLink;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +16,8 @@ import java.time.Duration;
 
 public class LoginDevice02 extends BaseTest {
 
-    @Test()
+    @Test
+    @TmsLink("JIRA-123")
     public void testSwipeVertically() {
         System.out.println("--> Session ID: " + getDriver().getSessionId());
 
@@ -23,7 +25,7 @@ public class LoginDevice02 extends BaseTest {
         navFormsScreenBtn.click();
 
         // Wait until user is on Form screen
-        WebDriverWait wait = new WebDriverWait(getDriver(), 20L);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 60L);
         wait.until(ExpectedConditions
                 .visibilityOfElementLocated(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"Form components\")")));
 
