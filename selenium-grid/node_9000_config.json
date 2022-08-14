@@ -2,16 +2,18 @@
   "capabilities": [
     {
       "maxInstances": 1,
-      "platform": "android"
+      "platform": "ios",
+      "deviceName": "iPhone 13",
+      "platformVersion": "15.0"
     }
   ],
   "configuration": {
     "cleanUpCycle": 2000,
     "timeout": 30000,
     "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
-    "url": "http://localhost:7000/wd/hub",
+    "url": "http://localhost:9000/wd/hub",
     "host": "localhost",
-    "port": 7000,
+    "port": 9000,
     "maxSession": 1,
     "register": true,
     "registerCycle": 5000,

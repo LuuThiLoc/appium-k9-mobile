@@ -38,10 +38,10 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         }
 
         switch (platform) {
-            case ANDROID:
+            case android:
                 appiumDriver = new AndroidDriver<>(appiumServer, desiredCapabilities);
                 break;
-            case IOS:
+            case ios:
                 appiumDriver = new IOSDriver<>(appiumServer, desiredCapabilities);
                 break;
         }
@@ -51,17 +51,9 @@ public class DriverFactory implements MobileCapabilityTypeEx {
 
         return appiumDriver;
     }
-    public AppiumDriver<MobileElement> getDriver(Platform platform, String udid, String systemPort) {
+    public AppiumDriver<MobileElement> getDriver(Platform platform, String udid, String systemPort, String platformVersion) {
 
         if (appiumDriver == null) {
-            // Send a request to Appium server to launch the app
-            DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-            desiredCapabilities.setCapability(PLATFORM_NAME, "Android");
-            desiredCapabilities.setCapability(AUTOMATION_NAME, "uiautomator2");
-            desiredCapabilities.setCapability(UDID, udid);
-            desiredCapabilities.setCapability(APP_PACKAGE, "com.wdiodemoapp");
-            desiredCapabilities.setCapability(APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
-            desiredCapabilities.setCapability(SYSTEM_PORT, systemPort);
 
             URL appiumServer = null;
             String targetServer = "http://localhost:4723/wd/hub";
@@ -74,20 +66,34 @@ public class DriverFactory implements MobileCapabilityTypeEx {
             }
 
             if (appiumServer == null) {
-                throw new RuntimeException("Can't construct the appium server.");
+                throw new RuntimeException("Can't connect to selenium grid");
             }
 
+            DesiredCapabilities desiredCaps = new DesiredCapabilities();
+            desiredCaps.setCapability(PLATFORM_NAME, platform);
+
             switch (platform) {
-                case ANDROID:
-                    appiumDriver = new AndroidDriver<>(appiumServer, desiredCapabilities);
+                case android:
+                    // Send a request to Appium server to launch the app
+                    desiredCaps.setCapability(AUTOMATION_NAME, "uiautomator2");
+                    desiredCaps.setCapability(UDID, udid);
+                    desiredCaps.setCapability(APP_PACKAGE, "com.wdiodemoapp");
+                    desiredCaps.setCapability(APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
+                    desiredCaps.setCapability(SYSTEM_PORT, systemPort);
+                    appiumDriver = new AndroidDriver<>(appiumServer, desiredCaps);
                     break;
-                case IOS:
-                    appiumDriver = new IOSDriver<>(appiumServer, desiredCapabilities);
+                case ios:
+                    desiredCaps.setCapability(AUTOMATION_NAME, "XCUITest");
+                    desiredCaps.setCapability(DEVICE_NAME, udid);
+                    desiredCaps.setCapability(PLATFORM_VERSION, platformVersion);
+                    desiredCaps.setCapability(BUNDLE_ID, "org.wdioNativeDemoApp");
+                    desiredCaps.setCapability(WDA_LOCAL_PORT, systemPort);
+                    appiumDriver = new IOSDriver<>(appiumServer, desiredCaps);
                     break;
             }
 
             // implicit wait | Interval time = 500ms
-            appiumDriver.manage().timeouts().implicitlyWait(360, TimeUnit.SECONDS);
+            appiumDriver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         }
         return appiumDriver;
     }

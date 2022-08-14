@@ -2,7 +2,7 @@
   "capabilities": [
     {
       "maxInstances": 1,
-      "platform": "ANDROID"
+      "platform": "android"
     }
   ],
   "configuration": {

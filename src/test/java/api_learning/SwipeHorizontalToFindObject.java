@@ -18,7 +18,7 @@ import java.util.List;
 public class SwipeHorizontalToFindObject {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
         try {
             // Navigate to Swipe Screen

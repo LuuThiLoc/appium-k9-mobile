@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DragAndDrop {
-    static AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+    static AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
     public static void main(String[] args) {
 

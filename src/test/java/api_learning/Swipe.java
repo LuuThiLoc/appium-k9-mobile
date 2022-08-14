@@ -15,7 +15,7 @@ import platform.Platform;
 import java.time.Duration;
 
 public class Swipe {
-    static AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+    static AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
     public static void main(String[] args) {
         // Forms Screen:

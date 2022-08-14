@@ -14,7 +14,7 @@ public class LoginTest {
 
     @Test
     public void testLogin() {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
         // Way: List<> --> permit duplicated values
         List<LoginCreds> loginCreds = new ArrayList<>();

@@ -19,7 +19,7 @@ import java.util.List;
 public class FillForm {
 
     public static void main(String[] args) {
-        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
+        AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.android);
 
         try {
             // Navigate to Forms Screen
