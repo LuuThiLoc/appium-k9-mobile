@@ -10,11 +10,11 @@
         </classes>
     </test>
 
-<!--    <test name="Authentication 02" >-->
-<!--        <parameter name="udid" value="c8adce237d27"/>-->
-<!--        <parameter name="systemPort" value="8400"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.parallel.LoginDevice01" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Authentication 02" >
+        <parameter name="udid" value="emulator-5556"/>
+        <parameter name="systemPort" value="8400"/>
+        <classes>
+            <class name="tests.parallel.LoginDevice02" />
+        </classes>
+    </test>
 </suite>

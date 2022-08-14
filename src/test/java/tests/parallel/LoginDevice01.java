@@ -18,7 +18,6 @@ public class LoginDevice01 extends BaseTest {
     @Issue("JIRA-456")
     public void testLogin(LoginCreds loginCred) {
         System.out.println("--> Session ID: " + getDriver().getSessionId());
-        Assert.fail("--------");
         LoginFlow loginFlow = new LoginFlow(getDriver(), loginCred.getEmail(), loginCred.getPassword());
         loginFlow.goToLoginScreen();
         loginFlow.login();

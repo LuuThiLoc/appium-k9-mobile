@@ -64,7 +64,7 @@ public class DriverFactory implements MobileCapabilityTypeEx {
             desiredCapabilities.setCapability(SYSTEM_PORT, systemPort);
 
             URL appiumServer = null;
-            String targetServer = "http://192.168.1.24:4444/wd/hub";
+            String targetServer = "http://localhost:4723/wd/hub";
 
             try {
                 appiumServer = new URL(targetServer);
@@ -87,7 +87,7 @@ public class DriverFactory implements MobileCapabilityTypeEx {
             }
 
             // implicit wait | Interval time = 500ms
-            appiumDriver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            appiumDriver.manage().timeouts().implicitlyWait(360, TimeUnit.SECONDS);
         }
         return appiumDriver;
     }
