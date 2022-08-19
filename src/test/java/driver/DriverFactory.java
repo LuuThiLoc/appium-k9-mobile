@@ -53,10 +53,28 @@ public class DriverFactory implements MobileCapabilityTypeEx {
     }
     public AppiumDriver<MobileElement> getDriver(Platform platform, String udid, String systemPort, String platformVersion) {
 
+        String remoteInfoViaEnvVar = System.getenv("env");
+        String remoteInfoViaCommandVar = System.getProperty("env");
+
+        String isRemote = remoteInfoViaEnvVar == null? remoteInfoViaCommandVar : remoteInfoViaEnvVar;
+
+        if (isRemote == null){
+            throw new IllegalArgumentException("Please provide env variable [env]!");
+        }
+
+        String targetServer = "https://localhost:4723/wd/hub";
+        if (isRemote.equals("true")){
+            String hubIPAdd = System.getenv("hub");
+            if (hubIPAdd == null) hubIPAdd = System.getProperty("hub");
+            if (hubIPAdd == null){
+                throw new IllegalArgumentException("Please provide hub IP address via env variable [hub]!");
+            }
+            targetServer = hubIPAdd + ":4444/wd/hub";
+        }
+
         if (appiumDriver == null) {
 
             URL appiumServer = null;
-            String targetServer = "http://localhost:4723/wd/hub";
 
             try {
                 appiumServer = new URL(targetServer);
@@ -93,7 +111,7 @@ public class DriverFactory implements MobileCapabilityTypeEx {
             }
 
             // implicit wait | Interval time = 500ms
-            appiumDriver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
+            appiumDriver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
         }
         return appiumDriver;
     }
