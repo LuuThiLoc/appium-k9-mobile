@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>iPhone 13</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/4/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/2</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 19 12:47:07 ICT 2022</td>
+<td>Started on:</td><td>Fri Aug 19 18:44:57 ICT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (614 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1117 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,7 +75,7 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.parallel.LoginDevice02.captureScreenshot()'><b>captureScreenshot</b><br>Test class: tests.parallel.LoginDevice02<br>Test method: Capture screenshot if test is failed<br>Parameters: [TestResult name=testSwipeVertically status=FAILURE method=LoginDevice02.testSwipeVertically()[pri:0, instance:tests.parallel.LoginDevice02@78a773fd] output={null}]</td>
+<td title='tests.parallel.LoginDevice01.captureScreenshot()'><b>captureScreenshot</b><br>Test class: tests.parallel.LoginDevice01<br>Test method: Capture screenshot if test is failed<br>Parameters: [TestResult name=testLogin status=FAILURE method=LoginDevice01.testLogin(test_data.models.LoginCreds)[pri:0, instance:tests.parallel.LoginDevice01@7de62196] output={null}]</td>
 <td><div><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
 	at driver.DriverFactory.getDriver(DriverFactory.java:62)
 	at tests.BaseTest.getDriver(BaseTest.java:35)
@@ -85,8 +85,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1452992299", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1452992299'><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace93299738", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace93299738'><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
 	at driver.DriverFactory.getDriver(DriverFactory.java:62)
 	at tests.BaseTest.getDriver(BaseTest.java:35)
 	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
@@ -120,7 +120,74 @@ function toggleAllBoxes() {
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </pre></div></td>
 <td>0</td>
-<td>tests.parallel.LoginDevice02@78a773fd</td></tr>
+<td>tests.parallel.LoginDevice01@7de62196</td></tr>
+<tr>
+<td title='tests.parallel.LoginDevice02.captureScreenshot()'><b>captureScreenshot</b><br>Test class: tests.parallel.LoginDevice02<br>Test method: Capture screenshot if test is failed<br>Parameters: [TestResult name=testSwipeVertically status=FAILURE method=LoginDevice02.testSwipeVertically()[pri:0, instance:tests.parallel.LoginDevice02@1e13529a] output={null}]</td>
+<td><div><pre>java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:238)
+	at platform.Platform.valueOf(Platform.java:3)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace989244607", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace989244607'><pre>java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:238)
+	at platform.Platform.valueOf(Platform.java:3)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:803)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:772)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:748)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre></div></td>
+<td>0</td>
+<td>tests.parallel.LoginDevice02@1e13529a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.parallel.LoginDevice01.captureScreenshot()'><b>captureScreenshot</b><br>Test class: tests.parallel.LoginDevice01<br>Test method: Capture screenshot if test is failed</td>
+<td></td>
+<td>0</td>
+<td>tests.parallel.LoginDevice01@7de62196</td></tr>
+<tr>
+<td title='tests.parallel.LoginDevice01.captureScreenshot()'><b>captureScreenshot</b><br>Test class: tests.parallel.LoginDevice01<br>Test method: Capture screenshot if test is failed</td>
+<td></td>
+<td>0</td>
+<td>tests.parallel.LoginDevice01@7de62196</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
@@ -131,20 +198,64 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tests.parallel.LoginDevice02.testSwipeVertically()'><b>testSwipeVertically</b><br>Test class: tests.parallel.LoginDevice02</td>
+<td><div><pre>java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:238)
+	at platform.Platform.valueOf(Platform.java:3)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.parallel.LoginDevice02.testSwipeVertically(LoginDevice02.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace399327979", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace399327979'><pre>java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:238)
+	at platform.Platform.valueOf(Platform.java:3)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.parallel.LoginDevice02.testSwipeVertically(LoginDevice02.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre></div></td>
+<td>0</td>
+<td>tests.parallel.LoginDevice02@1e13529a</td></tr>
+<tr>
+<td title='tests.parallel.LoginDevice01.testLogin()'><b>testLogin</b><br>Test class: tests.parallel.LoginDevice01<br>Test method: Login Test<br>Parameters: LoginCreds{email='teo@', password='12345678'}</td>
 <td><div><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
 	at driver.DriverFactory.getDriver(DriverFactory.java:62)
 	at tests.BaseTest.getDriver(BaseTest.java:35)
-	at tests.parallel.LoginDevice02.testSwipeVertically(LoginDevice02.java:22)
+	at tests.parallel.LoginDevice01.testLogin(LoginDevice01.java:18)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2062326255", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2062326255'><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1397859117", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1397859117'><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
 	at driver.DriverFactory.getDriver(DriverFactory.java:62)
 	at tests.BaseTest.getDriver(BaseTest.java:35)
-	at tests.parallel.LoginDevice02.testSwipeVertically(LoginDevice02.java:22)
+	at tests.parallel.LoginDevice01.testLogin(LoginDevice01.java:18)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -170,161 +281,7 @@ function toggleAllBoxes() {
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </pre></div></td>
 <td>0</td>
-<td>tests.parallel.LoginDevice02@78a773fd</td></tr>
-<tr>
-<td title='tests.testng.TestNGHooks01.testSth01()'><b>testSth01</b><br>Test class: tests.testng.TestNGHooks01</td>
-<td><div><pre>java.lang.RuntimeException: FAILED
-	at tests.testng.TestNGHooks01.testSth01(TestNGHooks01.java:26)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace395489188", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace395489188'><pre>java.lang.RuntimeException: FAILED
-	at tests.testng.TestNGHooks01.testSth01(TestNGHooks01.java:26)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-</pre></div></td>
-<td>0</td>
-<td>tests.testng.TestNGHooks01@45ac5f9b</td></tr>
-<tr>
-<td title='tests.testng.TestNGHooks01.testSth03()'><b>testSth03</b><br>Test class: tests.testng.TestNGHooks01</td>
-<td><div><pre>java.lang.AssertionError: expected [b] but found [a]
-	at tests.testng.TestNGHooks01.testSth03(TestNGHooks01.java:38)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1611171127", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1611171127'><pre>java.lang.AssertionError: expected [b] but found [a]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at tests.testng.TestNGHooks01.testSth03(TestNGHooks01.java:38)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-</pre></div></td>
-<td>0</td>
-<td>tests.testng.TestNGHooks01@45ac5f9b</td></tr>
-<tr>
-<td title='tests.testng.TestNGHooks01.testSth04()'><b>testSth04</b><br>Test class: tests.testng.TestNGHooks01</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	[ERR] Wrong message 01 expected [b] but found [a],
-	[ERR] Wrong message 02 expected [b] but found [a]
-	at tests.testng.TestNGHooks01.testSth04(TestNGHooks01.java:53)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace978339391", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace978339391'><pre>java.lang.AssertionError: The following asserts failed:
-	[ERR] Wrong message 01 expected [b] but found [a],
-	[ERR] Wrong message 02 expected [b] but found [a]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-	at tests.testng.TestNGHooks01.testSth04(TestNGHooks01.java:53)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-</pre></div></td>
-<td>0</td>
-<td>tests.testng.TestNGHooks01@45ac5f9b</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='tests.testng.TestParameter.testParameter()'><b>testParameter</b><br>Test class: tests.testng.TestParameter<br>Parameters: iPhone 13, 8791</td>
-<td></td>
-<td>0</td>
-<td>tests.testng.TestParameter@518caac3</td></tr>
-<tr>
-<td title='tests.testng.TestNGHooks02.testSth02()'><b>testSth02</b><br>Test class: tests.testng.TestNGHooks02</td>
-<td></td>
-<td>0</td>
-<td>tests.testng.TestNGHooks02@135606db</td></tr>
-<tr>
-<td title='tests.testng.TestParameter02.testParameter()'><b>testParameter</b><br>Test class: tests.testng.TestParameter02<br>Parameters: iPhone 13, 8791</td>
-<td></td>
-<td>0</td>
-<td>tests.testng.TestParameter02@68034211</td></tr>
-<tr>
-<td title='tests.testng.TestNGHooks02.testSth01()'><b>testSth01</b><br>Test class: tests.testng.TestNGHooks02</td>
-<td></td>
-<td>0</td>
-<td>tests.testng.TestNGHooks02@135606db</td></tr>
+<td>tests.parallel.LoginDevice01@7de62196</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -334,18 +291,36 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.testng.TestNGHooks01.testSth02()'><b>testSth02</b><br>Test class: tests.testng.TestNGHooks01</td>
-<td><div><pre>java.lang.Throwable: Method tests.testng.TestNGHooks01.testSth02() on instance tests.testng.TestNGHooks01@45ac5f9b depends on not successfully finished methods 
-[tests.testng.TestNGHooks01.testSth01() on instance tests.testng.TestNGHooks01@45ac5f9b]
+<td title='tests.parallel.LoginDevice01.testLogin()'><b>testLogin</b><br>Test class: tests.parallel.LoginDevice01<br>Test method: Login Test<br>Parameters: LoginCreds{email='teo@sth.com', password='1234567'}</td>
+<td><div><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
+	at driver.DriverFactory.getDriver(DriverFactory.java:62)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2132802445", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2132802445'><pre>java.lang.Throwable: Method tests.testng.TestNGHooks01.testSth02() on instance tests.testng.TestNGHooks01@45ac5f9b depends on not successfully finished methods 
-[tests.testng.TestNGHooks01.testSth01() on instance tests.testng.TestNGHooks01@45ac5f9b]
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:149)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace291261079", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace291261079'><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
+	at driver.DriverFactory.getDriver(DriverFactory.java:62)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:803)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:772)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:748)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
@@ -361,7 +336,54 @@ function toggleAllBoxes() {
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </pre></div></td>
 <td>0</td>
-<td>tests.testng.TestNGHooks01@45ac5f9b</td></tr>
+<td>tests.parallel.LoginDevice01@7de62196</td></tr>
+<tr>
+<td title='tests.parallel.LoginDevice01.testLogin()'><b>testLogin</b><br>Test class: tests.parallel.LoginDevice01<br>Test method: Login Test<br>Parameters: LoginCreds{email='teo@sth.com', password='12345678'}</td>
+<td><div><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
+	at driver.DriverFactory.getDriver(DriverFactory.java:62)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1012407942", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1012407942'><pre>java.lang.IllegalArgumentException: Please provide env variable [env]!
+	at driver.DriverFactory.getDriver(DriverFactory.java:62)
+	at tests.BaseTest.getDriver(BaseTest.java:35)
+	at tests.BaseTest.captureScreenshot(BaseTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:803)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:772)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:748)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre></div></td>
+<td>0</td>
+<td>tests.parallel.LoginDevice01@7de62196</td></tr>
 </table><p>
 </body>
 </html>

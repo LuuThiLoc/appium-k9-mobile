@@ -3,8 +3,8 @@
 <suite name="Regression"  >
     <test name="Login" >
         <classes>
-<!--            <class name="tests.authen.LoginTestWithDataBuilder" />-->
-            <class name="tests.authen.LoginTestWithBaseTest" />
+<!--            <class name="api_learning.authen.LoginTestWithDataBuilder" />-->
+            <class name="api_learning.authen.LoginTestWithBaseTest" />
         </classes>
     </test>
 </suite>

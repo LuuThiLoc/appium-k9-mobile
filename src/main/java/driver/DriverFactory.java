@@ -53,13 +53,13 @@ public class DriverFactory implements MobileCapabilityTypeEx {
     }
     public AppiumDriver<MobileElement> getDriver(Platform platform, String udid, String systemPort, String platformVersion) {
 
-        String remoteInfoViaEnvVar = System.getenv("env");
-        String remoteInfoViaCommandVar = System.getProperty("env");
+        String remoteInfoViaEnvVar = System.getenv("remote");
+        String remoteInfoViaCommandVar = System.getProperty("remote");
 
         String isRemote = remoteInfoViaEnvVar == null? remoteInfoViaCommandVar : remoteInfoViaEnvVar;
 
         if (isRemote == null){
-            throw new IllegalArgumentException("Please provide env variable [env]!");
+            throw new IllegalArgumentException("Please provide env variable [remote]!");
         }
 
         String targetServer = "https://localhost:4723/wd/hub";

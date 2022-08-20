@@ -36,7 +36,7 @@ public class Main implements MobileCapabilityTypeEx {
         String platformName = System.getProperty("platform");
 //        String platformName = System.getenv("platform"); // cheat: set platform=ios in config to run local port 4723 | selenium-grid port 4444
         if (platformName == null){
-            throw new IllegalArgumentException("[ERR]Please provide a platform via -Dplatform");
+            throw new IllegalArgumentException("[ERR] Please provide a platform via -Dplatform");
         }
         try {
             Platform.valueOf(platformName);

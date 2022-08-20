@@ -1,11 +1,11 @@
-package tests.testng;
+package api_learning.testng;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.GregorianCalendar;
 
-public class TestParameter {
+public class TestParameter02 {
 
     @Test
     @Parameters({"udid", "systemPort"})
