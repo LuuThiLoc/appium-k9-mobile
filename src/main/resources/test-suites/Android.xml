@@ -4,9 +4,10 @@
     <test name="Authentication 01" >
         <parameter name="platformName" value="android"/>
         <parameter name="udid" value="emulator-5556"/>
-        <parameter name="systemPort" value="8400"/>
+        <parameter name="systemPort" value="8300"/>
         <classes>
             <class name="tests.parallel.LoginDevice01" />
+            <class name="tests.parallel.LoginDevice02" />
         </classes>
     </test>
 </suite>

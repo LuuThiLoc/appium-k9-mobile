@@ -1,6 +1,6 @@
 {
-  "host": "localhost",
-  "port": 4723,
+  "host": "192.168.1.11",
+  "port": 4444,
   "newSessionWaitTimeout": -1,
   "servlets": [],
   "withoutServlets": [],
