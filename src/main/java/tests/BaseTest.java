@@ -28,10 +28,6 @@ public class BaseTest {
 
 
     protected AppiumDriver<MobileElement> getDriver(){
-        System.out.println(platformName);
-        System.out.println(udid);
-        System.out.println(systemPort);
-        System.out.println(platformVersion);
         return driverThread.get().getDriver(Platform.valueOf(platformName), udid, systemPort, platformVersion);
 }
 
